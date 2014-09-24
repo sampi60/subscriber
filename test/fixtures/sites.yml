@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  uri: MyString
+  last_status: MyString
+  last_status_date: 2014-09-23 22:07:08
+  last_post: MyString
+
+two:
+  name: MyString
+  uri: MyString
+  last_status: MyString
+  last_status_date: 2014-09-23 22:07:08
+  last_post: MyString
