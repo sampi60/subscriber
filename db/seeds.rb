@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Site.create(
+  name: 'SM Chełm',
+  uri: 'http://www.smchelm.pl/',
+  last_post: '504'
+)
