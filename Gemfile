@@ -41,3 +41,6 @@ gem 'nokogiri'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+  gem 'pry'
+end
