@@ -1,0 +1,22 @@
+%h3
+  Site name:
+  =@site.name
+%br
+
+%p
+  Address:
+  =link_to @site.uri, @site.uri
+
+%p
+  Last post address:
+  =link_to "#{@site.uri}p#{@site.last_post}", "#{@site.uri}p#{@site.last_post}" # TODO create helper for building this url
+
+%p
+  Is new post published? (
+  =@site.last_post.to_i + 1
+  )
+  %b
+    =@p ? link_to("#{@site.uri}p#{@site.last_post.to_i+1}", "#{@site.uri}p#{@site.last_post.to_i+1}") : 'No'
+
+%br
+%p=link_to 'Back', sites_path

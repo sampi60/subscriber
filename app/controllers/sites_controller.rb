@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_action :set_site, only: [:show, :edit, :update, :destroy]
+  before_action :set_site, only: [:show, :edit, :update, :destroy, :check]
 
   # GET /sites
   # GET /sites.json
@@ -59,6 +59,10 @@ class SitesController < ApplicationController
       format.html { redirect_to sites_url, notice: 'Site was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def check
+    @p = Site.search_for_new_post(@site)
   end
 
   private
