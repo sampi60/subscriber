@@ -63,6 +63,7 @@ class SitesController < ApplicationController
 
   def check
     @p = Site.search_for_new_post(@site)
+    Notifier.new_post(@site).deliver if @p
   end
 
   private

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+%html
+  %head
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  %body
+    %h3
+      Nowy post na stronie
+      =@site.name
+    %p= link_to "#{@site.uri}p#{@site.last_post.to_i+1}", "#{@site.uri}p#{@site.last_post.to_i+1}"
