@@ -62,8 +62,9 @@ class SitesController < ApplicationController
   end
 
   def check
-    @p = Site.search_for_new_post(@site)
-    Notifier.new_post(@site).deliver if @p
+    @last_post_site_id = @site.last_post
+    @p = @site.search_for_new_post
+    #Notifier.new_post(@site).deliver if @p
   end
 
   private

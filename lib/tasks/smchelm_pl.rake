@@ -22,7 +22,7 @@ namespace :site do
     desc ''
     task check: :environment do
       site = Site.where(name: 'SM Chełm').first
-      Notifier.new_post(site).deliver if Site.search_for_new_post(site)
+      Notifier.new_post(site).deliver if site.search_for_new_post
     end
 
   end

@@ -1,9 +1,15 @@
 class Site < ActiveRecord::Base
-  def self.search_for_new_post(site)
+  def search_for_new_post
     require 'open-uri'
-    last_post_id = site.last_post.to_i + 1
-    last_post_url = "#{site.uri}p#{last_post_id}"
-    page = Nokogiri::HTML(open(last_post_url))
-    page.css('.date').present?
+    page = Nokogiri::HTML(open(new_post_url))
+    page.css('.mainPanel').present?
+  end
+
+  def new_post_id
+    last_post.to_i + 1
+  end
+
+  def new_post_url
+    "#{uri}p#{new_post_id}"
   end
 end
