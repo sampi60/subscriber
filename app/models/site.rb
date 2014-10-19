@@ -2,7 +2,11 @@ class Site < ActiveRecord::Base
   def search_for_new_post
     require 'open-uri'
     page = Nokogiri::HTML(open(new_post_url))
-    page.css('.mainPanel').present?
+    is_new_post = page.css('.mainPanel').present?
+
+    increment_post_id(self) if is_new_post
+
+    is_new_post
   end
 
   def new_post_id
@@ -11,5 +15,12 @@ class Site < ActiveRecord::Base
 
   def new_post_url
     "#{uri}p#{new_post_id}"
+  end
+
+  private
+
+  def increment_post_id(site)
+    site.last_post = new_post_id
+    site.save!
   end
 end
