@@ -46,3 +46,6 @@ gem 'haml'
 group :development do
   gem 'pry'
 end
+
+# heroku
+gem 'rails_12factor', group: :production
