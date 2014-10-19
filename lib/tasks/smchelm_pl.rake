@@ -19,5 +19,11 @@ namespace :site do
       end
     end
 
+    desc ''
+    task check: :environment do
+      site = Site.where(name: 'SM Chełm').first
+      Notifier.new_post(site).deliver if Site.search_for_new_post(site)
+    end
+
   end
 end
