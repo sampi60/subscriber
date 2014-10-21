@@ -3,6 +3,7 @@ class Notifier < ActionMailer::Base
 
   def new_post(site)
     @site = site
-    mail(to: 'sampi60@gmail.com', subject: 'New post on smchelm.pl')
+    recipients = eval "#{ENV['SMCHELM_RECIPIENTS']}"
+    mail(to: recipients, subject: 'New post on smchelm.pl')
   end
 end
