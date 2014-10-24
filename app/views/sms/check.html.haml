@@ -1,0 +1,24 @@
+%h3
+  Site name:
+  =@sm.name
+%br
+
+%p
+  Address:
+  =link_to @sm.uri, @sm.uri
+
+%p
+  Last post address:
+  =link_to "#{@sm.uri}p#{@last_post_sm_id}", "#{@sm.uri}p#{@last_post_sm_id}" # TODO create helper for building this url
+
+%p
+  Is new post published? (
+  =link_to("#{@sm.uri}p#{@sm.last_post}", "#{@sm.uri}p#{@sm.last_post}")
+  )
+  %b
+    =@p ? 'YES!' : 'No'
+
+%br
+=link_to 'Edit', edit_sm_path(@sm)
+|
+=link_to 'Back', sms_path

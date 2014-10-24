@@ -1,6 +1,6 @@
-class CreateSites < ActiveRecord::Migration
+class CreateSms < ActiveRecord::Migration
   def change
-    create_table :sites do |t|
+    create_table :sms do |t|
       t.string :name
       t.string :uri
       t.string :last_status

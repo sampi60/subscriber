@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sm.name %>
+</p>
+
+<p>
+  <strong>Uri:</strong>
+  <%= @sm.uri %>
+</p>
+
+<p>
+  <strong>Last status:</strong>
+  <%= @sm.last_status %>
+</p>
+
+<p>
+  <strong>Last status date:</strong>
+  <%= @sm.last_status_date %>
+</p>
+
+<p>
+  <strong>Last post:</strong>
+  <%= @sm.last_post %>
+</p>
+
+<%= link_to 'Edit', edit_sm_path(@sm) %> |
+<%= link_to 'Back', sms_path %> |
+<%= link_to 'Check', check_sm_path(@sm) %>

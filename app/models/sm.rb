@@ -1,4 +1,4 @@
-class Site < ActiveRecord::Base
+class Sm < ActiveRecord::Base
   def search_for_new_post
     require 'open-uri'
     page = Nokogiri::HTML(open(new_post_url))
@@ -19,8 +19,8 @@ class Site < ActiveRecord::Base
 
   private
 
-  def increment_post_id(site)
-    site.last_post = new_post_id
-    site.save!
+  def increment_post_id(sm)
+    sm.last_post = new_post_id
+    sm.save!
   end
 end

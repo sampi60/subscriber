@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140923200708) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "sites", force: true do |t|
+  create_table "sms", force: true do |t|
     t.string   "name"
     t.string   "uri"
     t.string   "last_status"
