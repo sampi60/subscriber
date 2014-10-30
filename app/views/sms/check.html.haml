@@ -16,7 +16,7 @@
   =link_to("#{@sm.uri}p#{@sm.last_post}", "#{@sm.uri}p#{@sm.last_post}")
   )
   %b
-    =@p ? 'YES!' : 'No'
+    ="YES! #{@new_post_title}" if @new_post_title
 
 %br
 =link_to 'Edit', edit_sm_path(@sm)

@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140923200708) do
     t.string   "last_status"
     t.datetime "last_status_date"
     t.string   "last_post"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

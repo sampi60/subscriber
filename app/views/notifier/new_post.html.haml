@@ -6,4 +6,4 @@
     %h3
       Nowy post na stronie
       =@sm.name
-    %p= link_to "#{@sm.uri}p#{@sm.last_post}", "#{@sm.uri}p#{@sm.last_post}"
+    %p= link_to "#{@new_post_title} (#{@sm.uri}p#{@sm.last_post})", "#{@sm.uri}p#{@sm.last_post}"

@@ -63,8 +63,8 @@ class SmsController < ApplicationController
 
   def check
     @last_post_sm_id = @sm.last_post
-    @p = @sm.search_for_new_post
-    # Notifier.new_post(@sm).deliver if @p
+    @new_post_title = @sm.search_for_new_post
+    # Notifier.new_post(@sm, @new_post_title).deliver if @new_post_title
   end
 
   private
