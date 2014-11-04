@@ -21,7 +21,8 @@ namespace :sm do
   desc ''
   task check: :environment do
     sm = Sm.where(name: 'SM Chełm').first
-    Notifier.new_post(sm).deliver if sm.search_for_new_post
+    new_post_title = sm.search_for_new_post
+    Notifier.new_post(sm, new_post_title).deliver if new_post_title
   end
 
 end
