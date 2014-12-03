@@ -1,16 +1,26 @@
 class Sm < ActiveRecord::Base
   def search_for_new_post
     require 'open-uri'
-    page = Nokogiri::HTML(open(new_post_url))
-    new_post_title = page.css('.mainPanel h2').text if page.css('.mainPanel').present?
 
-    increment_post_id(self) if new_post_title
+    (1..10).each do |x|
+      @x = x
+      page = open_page
+      new_post_title = page.css('.mainPanel h2').text if page.css('.mainPanel').present?
 
-    new_post_title
+      if new_post_title
+        increment_post_id(self)
+        return new_post_title
+      end
+    end
+    nil
+  end
+
+  def open_page
+    Nokogiri::HTML(open(new_post_url))
   end
 
   def new_post_id
-    last_post.to_i + 1
+    last_post.to_i + @x
   end
 
   def new_post_url
