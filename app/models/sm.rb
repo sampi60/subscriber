@@ -15,22 +15,23 @@ class Sm < ActiveRecord::Base
     nil
   end
 
-  def open_page
-    Nokogiri::HTML(open(new_post_url))
-  end
-
-  def new_post_id
-    last_post.to_i + @x
-  end
-
-  def new_post_url
-    "#{uri}p#{new_post_id}"
-  end
 
   private
 
-  def increment_post_id(sm)
-    sm.last_post = new_post_id
-    sm.save!
-  end
+    def open_page
+      Nokogiri::HTML(open(new_post_url))
+    end
+
+    def new_post_id
+      last_post.to_i + @x
+    end
+
+    def new_post_url
+      "#{uri}p#{new_post_id}"
+    end
+
+    def increment_post_id(sm)
+      sm.last_post = new_post_id
+      sm.save!
+    end
 end
