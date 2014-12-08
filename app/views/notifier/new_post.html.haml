@@ -4,6 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   %body
     %h3
-      Nowy post na stronie
+      Nowe ogłoszenia na stronie
       =@sm.name
-    %p= link_to "#{@new_post_title} (#{@sm.uri}p#{@sm.last_post})", "#{@sm.uri}p#{@sm.last_post}"
+
+    %ul
+      - @new_posts.each do |post_id, post_title|
+        %li= link_to "#{post_id}: #{post_title}", "#{@sm.uri}p#{post_id}", target: :blank

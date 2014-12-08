@@ -12,11 +12,18 @@
   =link_to "#{@sm.uri}p#{@last_post_sm_id}", "#{@sm.uri}p#{@last_post_sm_id}" # TODO create helper for building this url
 
 %p
-  Is new post published? (
-  =link_to("#{@sm.uri}p#{@sm.last_post}", "#{@sm.uri}p#{@sm.last_post}")
-  )
+  Are new posts published?
   %b
-    ="YES! #{@new_post_title}" if @new_post_title
+    - if @new_posts
+      %ul
+        - @new_posts.each do |post_id, post_title|
+          %li= link_to "#{post_id}: #{post_title}", "#{@sm.uri}p#{post_id}", target: :blank
+    - else
+      No
+
+%p
+  New id:
+  = @sm.last_post
 
 %br
 =link_to 'Edit', edit_sm_path(@sm)

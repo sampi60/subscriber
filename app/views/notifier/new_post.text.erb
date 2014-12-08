@@ -1,4 +1,4 @@
 New post on site <%= @sm.name %>!
 
-<%= @new_post_title %>
-<%= "#{@sm.uri}p#{@sm.last_post}" %>
+<% @new_posts.each do |post_id, post_title| %>
+<%= "#{@sm.uri}p#{post_id} --> #{post_title}" %>
