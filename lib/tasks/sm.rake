@@ -22,7 +22,7 @@ namespace :sm do
   task check: :environment do
     sm = Sm.where(name: 'SM Chełm').first
     new_posts = sm.search_for_new_posts
-    Notifier.new_post(sm, new_posts).deliver if new_posts.any?
+    Notifier.new_post(sm, new_posts).deliver_later if new_posts.any?
   end
 
 end

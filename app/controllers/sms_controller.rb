@@ -64,7 +64,7 @@ class SmsController < ApplicationController
   def check
     @last_post_sm_id = @sm.last_post
     @new_posts = @sm.search_for_new_posts
-    # Notifier.new_post(@sm, @new_post_title).deliver if @new_post_title
+    Notifier.new_post(@sm, @new_posts).deliver_now if @new_posts && Rails.env.development?
   end
 
   private
