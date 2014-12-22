@@ -2,11 +2,16 @@
 %html
   %head
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    :css
+      #sm-posts li {
+        padding-bottom: 20px;
+      }
+
   %body
     %h3
       Nowe ogłoszenia na stronie
       =@sm.name
 
-    %ul
+    %ul#sm-posts
       - @new_posts.each do |post_id, post_title|
         %li= link_to "#{post_id}: #{post_title}", "#{@sm.uri}p#{post_id}", target: :blank
