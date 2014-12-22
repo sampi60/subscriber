@@ -83,3 +83,59 @@ div {
   padding: 5px;
   margin-bottom: 10px;
 }
+
+
+
+#navbar {
+  a:link, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: #888;
+  }
+  background-color: #333;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  overflow: auto;
+  color: white;
+
+  .left {
+    width: 80%;
+    float: left;
+    overflow: auto;
+
+    #logo {
+      font-size: 18px;
+      float: left;
+      margin-right: 30px;
+      margin-left: 10px;
+      a:hover {
+        color: white;
+        background-color: #333;
+      }
+    }
+
+    #menu {
+      float: left;
+    }
+  }
+
+  .right {
+    float: right;
+    margin-right: 30px;
+  }
+
+  .menu-item {
+    padding: 3px 5px 3px 5px;
+    margin-left: 5px;
+    background-color: #555;
+    &:hover{
+      background-color: #888;
+    }
+  }
+}

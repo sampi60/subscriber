@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Subscriber
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    #navbar
+      .left
+        #logo= link_to 'Subscriber', root_url
+        - if session[:user_id]
+          #menu
+            %span.menu-item= link_to 'Sm', sms_path
+            %span.menu-item= link_to 'Users', users_path
+      - if session[:user_id]
+        .right
+          .menu-item= link_to 'Log out', logout_url, method: :delete
+      - else
+        .right
+          .menu-item= link_to 'Log in', login_url
+
+    = yield
