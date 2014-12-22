@@ -1,0 +1,19 @@
+- if flash[:alert]
+  #alert= flash[:alert]
+- if flash[:notice]
+  #notice= flash[:notice]
+
+= form_tag do
+  %fieldset
+    %legend Please log in
+
+    %div
+      %p= label_tag 'Login'
+      %p= text_field_tag :login, params[:login], required: true
+    %br
+    %div
+      %p= label_tag 'Password'
+      %p= password_field_tag :password, params[:password], required: true
+    %br
+    %div
+      =submit_tag 'Log in'

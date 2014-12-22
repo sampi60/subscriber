@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  controller :sessions do
+    get     'login' => :new
+    post    'login' => :create
+    delete  'logout' => :destroy
+  end
+
+  resources :users, except: :show
+
   resources :sms do
     get 'check', on: :member
   end

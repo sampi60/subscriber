@@ -11,19 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923200708) do
+ActiveRecord::Schema.define(version: 20141222180704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "sms", force: true do |t|
-    t.string   "name"
-    t.string   "uri"
-    t.string   "last_status"
+  create_table "sms", force: :cascade do |t|
+    t.string   "name",             limit: 255
+    t.string   "uri",              limit: 255
+    t.string   "last_status",      limit: 255
     t.datetime "last_status_date"
-    t.string   "last_post"
+    t.string   "last_post",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "login"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
