@@ -9,7 +9,7 @@ class Sm < ActiveRecord::Base
     (start..stop).each do |id|
       page = open_page(id)
       next unless page.css('.mainPanel').present?
-      posts[id] = page.css('.mainPanel h2').text
+      posts[id.to_s] = page.css('.mainPanel h2').text
     end
 
     if posts.any?
