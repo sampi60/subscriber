@@ -1,4 +1,6 @@
 class Notifier < ActionMailer::Base
+  include Roadie::Rails::Automatic
+
   default from: "from@example.com"
 
   def new_post(sm, new_posts)

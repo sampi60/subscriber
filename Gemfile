@@ -40,6 +40,10 @@ gem 'unicorn'
 
 gem 'haml'
 
+# email preprocessor - imports styles from external stylesheets and inserts them inline
+gem 'roadie'
+gem 'roadie-rails'
+
 group :development do
   gem 'pry'
 
