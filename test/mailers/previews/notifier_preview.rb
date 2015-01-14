@@ -6,7 +6,8 @@ class NotifierPreview < ActionMailer::Preview
       101 => 'First post',
       102 => 'Second post',
       103 => 'Third post',
-      104 => 'Last, but no least post'
+      104 => 'Super awesome post with some very, very, very, very, very, very, very, very, very, very, very, very, very long (or even longer) title ',
+      105 => 'Last, but no least post'
     }
     Notifier.new_post(sm, new_posts)
   end
