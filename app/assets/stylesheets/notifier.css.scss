@@ -1,0 +1,42 @@
+#email {
+  font-family: Verdana,Helvetica,Arial;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  #content {
+    width: 600px;
+    border: 3px solid #aaa;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+    #date {
+      font-size: smaller;
+      color: #bbb;
+    }
+
+    h3 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+    }
+
+    a, a:visited {
+      color: black;
+      text-decoration: none;
+    }
+
+    .post {
+      padding: 10px;
+      border: 2px solid #aaa;
+      background-color: #eee;
+    }
+
+    #footer {
+      font-size: smaller;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,17 +1,20 @@
-<!DOCTYPE html>
+!!!
 %html
   %head
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    :css
-      #sm-posts li {
-        padding-bottom: 20px;
-      }
+    %meta{ content: "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
+    <link rel="stylesheet" type="text/css" href="/assets/notifier.css.scss">
 
-  %body
-    %h3
-      Nowe ogłoszenia na stronie
-      =@sm.name
+  %body#email
+    #content
+      #main
+        %span#date= Time.now
+        %h3
+          Nowe ogłoszenia na stronie
+          =@sm.name
 
-    %ul#sm-posts
-      - @new_posts.each do |post_id, post_title|
-        %li= link_to "#{post_id}: #{post_title}", "#{@sm.uri}p#{post_id}", target: :blank
+        - @new_posts.each do |post_id, post_title|
+          = link_to "<p class='post'> #{post_id}: #{post_title} </p>".html_safe, "#{@sm.uri}p#{post_id}", target: :blank
+
+      #footer
+        %p= link_to @sm.uri, @sm.uri
+        %p= link_to root_url, root_url
